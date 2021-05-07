@@ -9,3 +9,6 @@ My custom termite config.
 
 ## Polybar
 My custom polybar config files.
+
+## Picom
+My custom picom config files.
