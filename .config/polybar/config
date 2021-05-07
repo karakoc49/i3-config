@@ -218,10 +218,10 @@ format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #8be9fd
 label = %percentage_used%%
 
-[module/wlan]
-type = internal/network
-interface = net1
-interval = 3.0
+;[module/wlan]
+;type = internal/network
+;interface =
+;interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #50fa7b
@@ -245,10 +245,11 @@ type = internal/network
 interface = enp0s3
 interval = 3.0
 
+
 format-connected-underline = #50fa7b
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
+label-connected = %downspeed:7%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -421,3 +422,45 @@ margin-top = 5
 margin-bottom = 5
 
 ; vim:ft=dosini
+
+[module/networkspeedup]
+
+type = internal/network
+
+interface = enp0s3
+
+label-connected = "%upspeed:7%"
+
+format-connected = <label-connected>
+
+format-connected-prefix = ""
+
+format-connected-prefix-foreground = #cb410b
+
+format-connected-foreground = ${colors.foreground}
+
+format-connected-background = ${colors.background}
+
+format-connected-underline = #006600
+
+################################################################################
+
+[module/networkspeeddown]
+
+type = internal/network
+
+interface = enp0s3
+
+label-connected = "%downspeed:7%"
+
+format-connected = <label-connected>
+
+format-connected-prefix = ""
+
+format-connected-prefix-foreground = #7c0a02
+
+format-connected-foreground = ${colors.foreground}
+
+format-connected-background = ${colors.background}
+
+format-connected-underline = #006600
