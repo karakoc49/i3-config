@@ -19,3 +19,8 @@ My custom picom config files.
 ## Rofi custom menus
 Rofi based custom Menu, Applets, Launchers & Powermenus.
 https://github.com/adi1090x/rofi
+
+# Fonts
+
+## Font Awesome Free
+https://github.com/FortAwesome/Font-Awesome#
