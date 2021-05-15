@@ -15,3 +15,6 @@ My custom polybar config files.
 
 ## Picom
 My custom picom config files.
+
+## Custom Rofi Launchers
+Custom rofi launcher https://github.com/adi1090x/rofi
