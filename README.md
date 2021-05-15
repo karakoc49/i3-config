@@ -23,4 +23,4 @@ https://github.com/adi1090x/rofi
 # Fonts
 
 ## Font Awesome Free
-https://github.com/FortAwesome/Font-Awesome#
+https://github.com/FortAwesome/Font-Awesome
