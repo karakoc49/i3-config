@@ -17,5 +17,5 @@ My custom polybar config files.
 My custom picom config files.
 
 ## Rofi custom menus
-Rofi based custom Menu, Applets, Launchers & Powermenus.\n
+Rofi based custom Menu, Applets, Launchers & Powermenus.
 https://github.com/adi1090x/rofi
