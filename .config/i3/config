@@ -13,13 +13,13 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+#font pango:monospace 8
 
 # Set keyboard layout
 exec_always setxkbmap tr
 
 # Mouse sensitivity and acceleration
-exec_always xinput --set-prop "Logitech G203 LIGHTSYNC Gaming Mouse" "Coordinate Transformation Matrix" 0.5 0 0 0 0.5 0 0 0 1.7
+exec_always xinput --set-prop "Logitech G203 LIGHTSYNC Gaming Mouse" "Coordinate Transformation Matrix" 0.5 0 0 0 0.5 0 0 0 2.5
 
 # Power menu
 bindsym $mod+shift+x exec powermenu
@@ -29,7 +29,7 @@ bindsym $mod+shift+s exec android_screenshot
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:System San Francisco Display 18
+font pango:System San Francisco Display 18
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -40,7 +40,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+#exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -53,13 +53,13 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec alacritty
 
-# start firefox
-bindsym $mod+Shift+w exec firefox
+# start webbrowser
+bindsym $mod+Shift+w exec brave
 
 # start file manager
-bindsym $mod+Shift+f exec nautilus
+bindsym $mod+Shift+f exec thunar
 
 # start discord
 bindsym $mod+Shift+d exec discord
@@ -68,10 +68,10 @@ bindsym $mod+Shift+d exec discord
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-# bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id dmenu_run -h 20
 # A more modern dmenu replacement is rofi:
 #bindsym $mod+d exec rofi -show run
-bindsym $mod+d exec launcher
+#bindsym $mod+d exec launcher
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
@@ -114,6 +114,7 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
+
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
@@ -124,7 +125,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+c focus child
+bindsym $mod+c focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -163,7 +164,7 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-assign [class="firefox"] $ws1
+assign [class="Brave-browser"] $ws1
 assign [class="code-oss"] $ws2
 assign [class="discord"] $ws3
 for_window [class="Spotify"] move to workspace $ws4
@@ -216,26 +217,31 @@ set $bg-color 	         #2f343f
 set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
+set $urgent-bg-color     #ff79c6
 
 # window colors
 #                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color
+client.focused          $bg-color           $urgent-bg-color          $text-color
 client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color
 client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color
 
 
+exec_always --no-startup-id ~/.config/i3/alternating_layouts.py
 exec_always --no-startup-id picom -CGb --config ~/.config/picom/picom.conf
 # exec_always --no-startup-id feh --bg-scale /home/bruh/wallpaper.jpg
-exec_always --no-startup-id feh --bg-scale /home/bruh/Pictures/Wallpapers/arch.png
+# exec_always --no-startup-id feh --bg-scale /home/bruh/Pictures/Wallpapers/arch.png
+exec_always --no-startup-id nitrogen --restore
+
+# lxsession startup
+exec_always --no-startup-id lxsession
 
 # Disable window titlebars entirely
 for_window [class="^.*"] border pixel 2
 
 # Set inner/outer gaps
-gaps inner 10
-gaps outer 5
+gaps inner 5
+gaps outer 3
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
