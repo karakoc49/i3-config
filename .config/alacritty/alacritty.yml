@@ -1,0 +1,5 @@
+import:
+  - ~/.config/alacritty/dracula/dracula.yml
+
+font:
+  size: 14
