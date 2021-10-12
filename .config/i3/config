@@ -229,8 +229,8 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color
 
 exec_always --no-startup-id ~/.config/i3/alternating_layouts.py
 exec_always --no-startup-id picom -CGb --config ~/.config/picom/picom.conf
-# exec_always --no-startup-id feh --bg-scale /home/bruh/wallpaper.jpg
-# exec_always --no-startup-id feh --bg-scale /home/bruh/Pictures/Wallpapers/arch.png
+# exec_always --no-startup-id feh --bg-scale ~/wallpaper.jpg
+# exec_always --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/arch.png
 exec_always --no-startup-id nitrogen --restore
 
 # lxsession startup
