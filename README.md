@@ -7,8 +7,8 @@ The files that I used are given below.
 
 # Files
 
-## Termite
-My custom termite config.
+## Alacritty
+My custom alacritty config.
 
 ## Polybar
 My custom polybar config files.
@@ -16,9 +16,8 @@ My custom polybar config files.
 ## Picom
 My custom picom config files.
 
-## Rofi custom menus
-Rofi based custom Menu, Applets, Launchers & Powermenus.
-https://github.com/adi1090x/rofi
+## dmenu
+My custom dmenu config files.
 
 # Fonts
 
