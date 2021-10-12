@@ -1,0 +1,20 @@
+Jul 26 17:16 : exception: Failed to open '/home/bruh/.config/mpd/state': No such file or directory
+Jul 26 17:16 : avahi: Service 'Music Player @ H170endos' successfully established.
+Jul 26 17:18 : exception: Failed to open '/home/bruh/.config/mpd/state': No such file or directory
+Jul 26 17:18 : avahi: Service 'Music Player @ H170endos' successfully established.
+Jul 26 17:19 : exception: Failed to open '/home/bruh/.config/mpd/state': No such file or directory
+Jul 26 17:19 : avahi: Service 'Music Player @ H170endos' successfully established.
+Jul 26 17:21 : avahi: Service 'Music Player @ H170endos' successfully established.
+Jul 26 17:28 : avahi: Service 'Music Player @ H170endos' successfully established.
+Jul 26 17:34 : update: added /Yakuza 0 - Friday Night.mp3
+Jul 26 17:35 : avahi: Service 'Music Player @ H170endos' successfully established.
+Jul 26 17:36 : exception: Failed to open audio output
+Jul 26 17:36 : player: played "Yakuza 0 - Friday Night.mp3"
+Jul 26 17:36 : exception: Failed to commit /home/bruh/.config/mpd/state: File exists
+Jul 26 17:36 : avahi: Service 'Music Player @ H170endos' successfully established.
+Jul 26 17:36 : player: played "Yakuza 0 - Friday Night.mp3"
+Jul 26 17:36 : player: played "Yakuza 0 - Friday Night.mp3"
+Jul 26 17:37 : player: played "Yakuza 0 - Friday Night.mp3"
+Jul 26 17:40 : player: played "Yakuza 0 - Friday Night.mp3"
+Jul 26 17:40 : player: played "Yakuza 0 - Friday Night.mp3"
+Jul 26 17:40 : player: played "Yakuza 0 - Friday Night.mp3"
