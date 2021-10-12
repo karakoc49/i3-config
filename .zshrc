@@ -11,7 +11,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.emacs.d/bin:$PATH:~/flutter/bi
 pfetch
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/bruh/.oh-my-zsh"
+export ZSH="~/.oh-my-zsh"
 export EDITOR="emacs"
 export BROWSER="brave"
 
@@ -131,10 +131,10 @@ __conda_setup="$('/home/bruh/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/nu
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/bruh/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/bruh/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "~/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "~/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/bruh/anaconda3/bin:$PATH"
+        export PATH="~/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
