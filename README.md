@@ -8,16 +8,14 @@ The files that I used are given below.
 # Files
 
 ## Alacritty
-My custom alacritty config.
 
 ## Polybar
-My custom polybar config files.
 
 ## Picom
-My custom picom config files.
 
 ## dmenu
-My custom dmenu config files.
+
+## mpd
 
 # Fonts
 
