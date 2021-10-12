@@ -5,8 +5,8 @@
 My configuration files for i3wm.
 The files that I used are given below.
 
-```` shell
-sudo pacman -S alacritty polybar picom dmenu mpd
+```` console
+$ sudo pacman -S alacritty polybar picom dmenu mpd
 ```` 
 
 # Files
