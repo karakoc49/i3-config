@@ -33,7 +33,7 @@ width = 100%
 height = 27
 ;offset-x = 1%
 ;offset-y = 1%
-radius = 6.0
+radius = 1.0
 fixed-center = false
 
 background = ${colors.background}
@@ -42,7 +42,7 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 4
+border-size = 0
 border-color = #00000000
 
 padding-left = 0
@@ -52,15 +52,16 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
-font-3 = "Font Awesome 5 Brands Regular:style=Regular:pixelsize=13;1"
-font-4 = "Font Awesome 5 Free Regular:style=Regular:pixelsize=13;1"
-font-5 = "Font Awesome 5 Free Solid:style=Solid:pixelsize=11;1"
+;font-1 = Weather Icons:size=12;0
+font-1= siji:pixelsize=10;1
+font-2= "Font Awesome 5 Brands Regular:style=Regular:pixelsize=13;1"
+font-3 = "Font Awesome 5 Free Regular:style=Regular:pixelsize=13;1"
+font-4 = "Font Awesome 5 Free Solid:style=Solid:pixelsize=13;1"
+font-5 = unifont:fontformat=truetype:size=8:antialias=false;0
 
 modules-left = bspwm i3
-modules-center = mpd
-modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-center = mpd spotify
+modules-right = filesystem xbacklight pulseaudio xkeyboard memory cpu wlan networkspeeddown networkspeedup battery temperature date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -74,8 +75,8 @@ tray-padding = 2
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
 
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -141,7 +142,7 @@ ws-icon-0 = 1;1:
 ws-icon-1 = 2;2:
 ws-icon-2 = 3;3:
 ws-icon-3 = 4;4:
-ws-icon-4 = 5;5:
+ws-icon-4 = 5;5:
 ws-icon-5 = 6;6:
 ws-icon-6 = 7;7:
 ws-icon-7 = 8;8:
@@ -256,7 +257,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = enp0s3
+interface = enp5s0
 interval = 3.0
 
 
@@ -276,7 +277,7 @@ type = internal/date
 interval = 5
 
 date =
-date-alt = " %Y-%m-%d"
+date-alt = " %d/%m/%Y"
 
 time = %H:%M
 time-alt = %H:%M:%S
@@ -314,33 +315,33 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
-;[module/alsa]
-;type = internal/alsa
+[module/alsa]
+type = internal/alsa
 
-;format-volume = <label-volume> <bar-volume>
-;label-volume = VOL
-;label-volume-foreground = ${root.foreground}
+format-volume = <label-volume> <bar-volume>
+label-volume = VOL
+label-volume-foreground = ${root.foreground}
 
-;format-muted-prefix = " "
-;format-muted-foreground = ${colors.foreground-alt}
-;label-muted = sound muted
+format-muted-prefix = " "
+format-muted-foreground = ${colors.foreground-alt}
+label-muted = sound muted
 
-;bar-volume-width = 10
-;bar-volume-foreground-0 = #55aa55
-;bar-volume-foreground-1 = #55aa55
-;bar-volume-foreground-2 = #55aa55
-;bar-volume-foreground-3 = #55aa55
-;bar-volume-foreground-4 = #55aa55
-;bar-volume-foreground-5 = #f5a70a
-;bar-volume-foreground-6 = #ff5555
-;bar-volume-gradient = false
-;bar-volume-indicator = |
-;bar-volume-indicator-font = 2
-;bar-volume-fill = ─
-;bar-volume-fill-font = 2
-;bar-volume-empty = ─
-;bar-volume-empty-font = 2
-;bar-volume-empty-foreground = ${colors.foreground-alt}
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
 type = internal/battery
@@ -441,7 +442,7 @@ margin-bottom = 5
 
 type = internal/network
 
-interface = enp0s3
+interface = enp5s0
 
 label-connected = "%upspeed:7%"
 
@@ -463,7 +464,7 @@ format-connected-underline = #006600
 
 type = internal/network
 
-interface = enp0s3
+interface = enp5s0
 
 label-connected = "%downspeed:7%"
 
@@ -478,3 +479,25 @@ format-connected-foreground = ${colors.foreground}
 format-connected-background = ${colors.background}
 
 format-connected-underline = #006600
+
+[module/weather]
+type = custom/script
+exec = ~/.config/polybar-forecast/target/release/polybar-forecast --api-key=46eff027574cac85e4225c134dc472bc --city-id=745042 --units=metric
+exec-if = ping openweathermap.org -c 1
+
+;label = %output:0:15:...%
+label = %output%
+interval = 10
+label-font = 2
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = " "
+format = <label>
+exec = python ~/.config/polybar/modules/spotify_status.py -f '{artist}: {song}'
+format-underline = #1db954
+;control players (optional)
+click-left = playerctl --player=spotify play-pause
+click-right = playerctl --player=spotify next
+click-middle = playerctl --player=spotify previous
