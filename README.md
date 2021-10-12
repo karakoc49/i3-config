@@ -5,21 +5,22 @@
 My configuration files for i3wm.
 The files that I used are given below.
 
+## Dependencies
 ```` console
-$ sudo pacman -S alacritty polybar picom dmenu mpd
+$ sudo pacman -S alacritty polybar picom dmenu mpd zsh powerline
 ```` 
 
 # Files
 
-## Alacritty
+### Alacritty
 
-## Polybar
+### Polybar
 
-## Picom
+### Picom
 
-## dmenu
+### dmenu
 
-## mpd
+### mpd
 
 # Fonts
 
