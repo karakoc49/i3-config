@@ -12,15 +12,19 @@ $ sudo pacman -S alacritty polybar picom dmenu mpd zsh powerline
 
 # Files
 
-### Alacritty
+### alacritty
 
-### Polybar
+### polybar
 
-### Picom
+### picom
 
 ### dmenu
 
 ### mpd
+
+### zsh
+
+### powerline
 
 # Fonts
 
