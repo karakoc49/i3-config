@@ -1,6 +1,7 @@
 # i3wm
 
-
+# Screenshot
+![Alt text](/Screenshot.png?raw=true "Screenshot")
 
 My configuration files for i3wm.
 The files that I used are given below.
