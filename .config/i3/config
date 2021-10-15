@@ -59,7 +59,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+w exec brave
 
 # start file manager
-bindsym $mod+Shift+f exec thunar
+bindsym $mod+Shift+f exec alacritty -e ranger
 
 # start discord
 bindsym $mod+Shift+d exec discord
@@ -221,16 +221,16 @@ set $urgent-bg-color     #ff79c6
 
 # window colors
 #                       border              background         text                 indicator
-client.focused          $bg-color           $urgent-bg-color          $text-color
+client.focused          $bg-color           $urgent-bg-color          $text-color   $urgent-bg-color
 client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color
 client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          
 
 
 exec_always --no-startup-id ~/.config/i3/alternating_layouts.py
 exec_always --no-startup-id picom -CGb --config ~/.config/picom/picom.conf
-# exec_always --no-startup-id feh --bg-scale ~/wallpaper.jpg
-# exec_always --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/arch.png
+# exec_always --no-startup-id feh --bg-scale /home/bruh/wallpaper.jpg
+# exec_always --no-startup-id feh --bg-scale /home/bruh/Pictures/Wallpapers/arch.png
 exec_always --no-startup-id nitrogen --restore
 
 # lxsession startup
