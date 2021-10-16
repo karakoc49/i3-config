@@ -1,10 +1,10 @@
-# i3wm
+# i3-gaps
 
 # Screenshots
 ![Alt text](/Screenshot.png?raw=true "Screenshot")
 ![Alt text](/Screenshot2.png?raw=true "Screenshot-2")
 
-My configuration files for i3wm.
+My configuration files for i3-gaps.
 The files that I used are given below.
 
 ## Dependencies
